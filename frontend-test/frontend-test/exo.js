@@ -53,6 +53,26 @@ class Map {
     return rawMap;
   }
 
+   /**
+   *
+   * @param {int} i index
+   * @param {int} j index
+   * @param {int} rows number of rows in grid
+   * @param {int} cols number of cols in grid
+   * @param {int[][]} grid the map
+   * @returns {Boolean}
+   */
+
+  isEarth(i, j, rows, cols, grid) {
+    return (
+      i >= 0 &&
+      i < rows &&
+      j >= 0 &&
+      j < cols &&
+      grid[i][j].every((val, i) => val == DEFAULT_EARTH_COLOR[i])
+    );
+  }
+
   getColoredMap() {
     // TODO: That's where you work
   }
