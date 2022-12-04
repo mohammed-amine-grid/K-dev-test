@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "jest -w"
+    "build": "tsc --project tsconfig.build.json",
+    "test": "jest --watchAll"
   },
   "author": "",
   "license": "ISC",
