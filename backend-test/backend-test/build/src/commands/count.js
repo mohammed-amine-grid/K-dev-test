@@ -15,4 +15,4 @@ exports.count = function (people) {
     });
 };
 // this function does not work
-// I didn't understand the prompt well, given the time constraint I'll skip this for now.
+// given the time constraint I'll skip this for now.

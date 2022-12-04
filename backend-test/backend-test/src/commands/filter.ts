@@ -6,8 +6,8 @@ type Options = {
   pattern: string;
 };
 
-function filter  (people: Array<DataItem>, pattern: string) {
-    let filteredArr: DataItem[] = [];
+function filter(people: Array<DataItem>, pattern: string) {
+  let filteredArr: DataItem[] = [];
   people.forEach((dataItem) => {
     if (
       dataItem.people.some((person) =>
@@ -17,8 +17,7 @@ function filter  (people: Array<DataItem>, pattern: string) {
       filteredArr.push(dataItem);
   });
   if (filteredArr.length) return filteredArr;
-};
-
+}
 
 export const command: string = "filter <pattern>";
 
