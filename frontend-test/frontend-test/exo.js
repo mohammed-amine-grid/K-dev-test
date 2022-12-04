@@ -74,6 +74,41 @@ class Map {
   }
 
   getColoredMap() {
+    
     // TODO: That's where you work
+    let grid = this.getRawMap();
+    let currentColor = this.generateRandomColor();
+    let rows = grid.length;
+    let cols = grid[0].length;
+
+
+    /**
+     * 
+     * @param {int} i index
+     * @param {int} j index
+     * @returns {void}
+     */
+    const traverse = (i, j) => {
+      if (!this.isEarth(i, j, rows, cols, grid)) {
+        return;
+      }
+
+      grid[i][j] = currentColor;
+      traverse(i + 1, j); 
+      traverse(i, j + 1); 
+      traverse(i - 1, j); 
+      traverse(i, j - 1); 
+    };
+
+
+    for (let i = 0; i < grid.length; i += 1) {
+      for (let j = 0; j < grid[i].length; j += 1) {
+        if (this.isEarth(i, j, rows, cols, grid)) {
+          traverse(i, j, currentColor, rows, cols, grid);
+          currentColor =  this.generateRandomColor();
+        }
+      }
+    }
+    return grid;
   }
 }
